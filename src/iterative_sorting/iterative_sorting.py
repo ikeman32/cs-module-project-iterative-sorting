@@ -1,5 +1,4 @@
 # TO-DO: Complete the selection_sort() function below
-def selection_sort(arr):
 '''
 Algorithm
 
@@ -13,6 +12,8 @@ Algorithm
     b. Swap the element at current index with the
     smallest element found in above loop
 '''
+def selection_sort(arr):
+
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         cur_index = i
@@ -38,7 +39,29 @@ Algorithm
 2. If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
 '''
 def bubble_sort(arr):
-    # Your code here
+    # loop through array and compare arr[i] to arr[i + 1]
+    # if arr[i] < arr[i + 1] swap positions in arr
+    # where arr[i] becomes arr[i +1] and arr[i + 1] becomes arr[i]
+    # if no swap stop else reset index to 0 and loop again
+
+    #Loop until break statement encountered
+    while True:
+        #Set count to zero
+        count = 0
+        #Loop through array n - 1 times
+        for i in range(len(arr) - 1):
+            #Check if i is greater than i + 1
+            if arr[i] > arr[i + 1]:
+                #Swap places in array
+                arr[i + 1], arr[i] = arr[i], arr[i + 1]
+                #Increment count by 1
+                count += 1
+                
+        #Check to see if any swaps were made
+        if count == 0:
+            #Break out of loop
+            break
+
 
 
     return arr

@@ -16,15 +16,18 @@ def selection_sort(arr):
 
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
-        # Your code here
+        #Set min_idx to i
+        min_idx = i
 
+        #Loop throgh arr starting at i + 1
+        for a in range(i + 1, len(arr)):
+            #If arr[min_idx] is greater than arr[a]
+            #set min_idx to a
+            if arr[min_idx] > arr[a]:
+                min_idx = a
 
-        # TO-DO: swap
-        # Your code here
+        #Swap places in array
+        arr[min_idx], arr[i] = arr[i], arr[min_idx]
 
     return arr
 

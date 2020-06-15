@@ -86,8 +86,45 @@ buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
-def counting_sort(arr, maximum=None):
-    # Your code here
 
+#https://ayada.dev/posts/counting-sort/
+def counting_sort(arr, maximum=None):
+    n = len(arr)
+
+    #Check that array is not empty
+    if len(arr) > 0:
+        #Set maximum to max value in array + 1
+        maximum = max(arr) + 1
+    else:
+        #If the array is empty set maximum to 0 
+        maximum = 0
+
+    temp_arr = [0] * maximum
+
+    for v in arr:
+        temp_arr[v] += 1
+        
+
+    s = 0
+
+    for i in range(0, maximum):
+        tmp = temp_arr[i]
+        temp_arr[i] = s
+        s += tmp
+
+
+    result = [None] * n
+
+    for v in arr:
+        #Check for negative numbers in array
+        if min(arr) >= 0:
+            result[temp_arr[v]] = v
+            temp_arr[v] += 1
+        else:
+            #If there is a negative number send expected error message
+            result = 'Error, negative numbers not allowed in Count Sort'
+        
+
+    arr = result
 
     return arr

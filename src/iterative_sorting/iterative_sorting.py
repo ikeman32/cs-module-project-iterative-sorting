@@ -1,5 +1,18 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
+'''
+Algorithm
+
+1. Start with current index = 0
+
+2. For all indices EXCEPT the last index:
+
+    a. Loop through elements on right-hand-side 
+    of current index and find the smallest element
+
+    b. Swap the element at current index with the
+    smallest element found in above loop
+'''
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         cur_index = i
@@ -16,6 +29,14 @@ def selection_sort(arr):
 
 
 # TO-DO:  implement the Bubble Sort function below
+'''
+Algorithm
+
+1. Loop through your array
+    - Compare each element to its neighbor
+    - If elements in wrong position (relative to each other, swap them)
+2. If no swaps performed, stop. Else, go back to the element at index 0 and repeat step 1.
+'''
 def bubble_sort(arr):
     # Your code here
 
